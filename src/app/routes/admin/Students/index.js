@@ -5,8 +5,15 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import StudentItem from '../../../components/admin/students/StudentItem';
+import {searchKeyChanged} from '../../../../actions/admin/Student';
 
 class StudentsPage extends React.Component {
+
+  handleSearchKey(e){
+    this.props.actions.searchKeyChanged(e.target.value);
+  }
+
   render() {
     return (
       <div className="app-wrapper">
@@ -47,26 +54,34 @@ class StudentsPage extends React.Component {
             <TextField
               id="student-search"
               label="Search Student"
-              /*value={this.props.searchKey}
-              onChange={e => this.handleSearchKey(e)}*/
+              value={this.props.searchKey}
+              onChange={e => this.handleSearchKey(e)}
               margin="normal"
               fullWidth
             />
           </div>
         </div>
+        <div className="row project-wrapper">
+        {
+          this.props.students.map(student => <StudentItem key={`student-${student.id}`} student={student}/>)
+        }
+        </div>
+
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
+  const {searchKey, students} = state.students;
   const {projects} = state.projects;
-  return {projects}
+  return {searchKey, projects,students: students.filter(student=>student.name.includes(searchKey))}
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
       actions: bindActionCreators({
+        searchKeyChanged
       }, dispatch)
   };
 };

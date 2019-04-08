@@ -49,7 +49,7 @@ class Profile extends Component {
         </div>
         <div className="mb-xl-4 mb-3">
           <p>You are following {name}</p>
-          {this.props.authUser === id ? null :
+          {this.props.accessToken === id ? null :
             <Button size="small" variant="contained" className="mb-0" color="primary"
                     onClick={this.handleToggle}>{this.state.isFollow === true ? 'Follow' : 'Unfollow'}</Button>
           }
@@ -60,8 +60,8 @@ class Profile extends Component {
 }
 
 const mapStateToProps = ({auth}) => {
-  const {authUser} = auth;
-  return {authUser}
+  const {accessToken} = auth;
+  return {accessToken}
 };
 
 export default connect(mapStateToProps)(Profile)

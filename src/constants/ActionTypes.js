@@ -138,6 +138,16 @@ export const REMOVE_LABEL = 'remove_label';
 export const UPDATE_SEARCH = 'update_search';
 
 // ADMIN Projects
-export const ADMIN_PROJECT_SEARCH_KEY_CHNAGED = 'search_key_changed';
-export const ADMIN_PROJECT_SELECTED = 'project_selected';
+export const ADMIN_PROJECT_SEARCH_KEY_CHNAGED = 'admin_projects_search_key_changed';
+export const ADMIN_PROJECT_SELECTED = 'admin_project_selected';
+
+// ADMIN PCs
+export const ADMIN_PC_SEARCH_KEY_CHNAGED = 'admin_pcs_search_key_changed';
+
+// ADMIN APCs
+export const ADMIN_APC_SEARCH_KEY_CHNAGED = 'admin_apcs_search_key_changed';
+
+
+// ADMIN Students
+export const ADMIN_STUDENT_SEARCH_KEY_CHNAGED = 'admin_students_search_key_changed';
 

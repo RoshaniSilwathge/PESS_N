@@ -64,7 +64,7 @@ class App extends React.Component {
                   <Route path={`${match.url}/admin/assistant-project-coordinators`}
                          component={asyncComponent(() => import('./routes/admin/APC'))}/>
                   <Route path={`${match.url}/admin/settings`}
-                         component={asyncComponent(() => import('./routes/admin/Settings'))}/>
+                         component={asyncComponent(() => import('./routes/settings'))}/>
                   
                   <Route path={`${match.url}/project-coordinator/projects`}
                          component={asyncComponent(() => import('./routes/pc/Projects'))}/>
@@ -73,21 +73,21 @@ class App extends React.Component {
                   <Route path={`${match.url}/project-coordinator/announcements`}
                          component={asyncComponent(() => import('./routes/pc/Announcements'))}/>
                   <Route path={`${match.url}/project-coordinator/settings`}
-                         component={asyncComponent(() => import('./routes/pc/Settings'))}/>
+                         component={asyncComponent(() => import('./routes/settings'))}/>
                   
                   <Route path={`${match.url}/assistant-project-coordinator/projects`}
                          component={asyncComponent(() => import('./routes/apc/Projects'))}/>
                   <Route path={`${match.url}/assistant-project-coordinator/students`}
                          component={asyncComponent(() => import('./routes/apc/ReviewStudents'))}/>
                   <Route path={`${match.url}/assistant-project-coordinator/settings`}
-                         component={asyncComponent(() => import('./routes/apc/Settings'))}/>
+                         component={asyncComponent(() => import('./routes/settings'))}/>
                   
                   <Route path={`${match.url}/student/my-project`}
                          component={asyncComponent(() => import('./routes/student/MyProject'))}/>
                   <Route path={`${match.url}/student/announcements`}
                          component={asyncComponent(() => import('./routes/student/ViewAnnouncements'))}/>
                   <Route path={`${match.url}/student/settings`}
-                         component={asyncComponent(() => import('./routes/student/Settings'))}/>
+                         component={asyncComponent(() => import('./routes/settings'))}/>
                   <Route component={asyncComponent(() => import('components/Error404'))}/>
               </Switch>
             </div>

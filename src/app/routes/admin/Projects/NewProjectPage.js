@@ -6,19 +6,15 @@ import CardBox from "components/CardBox";
 import ProjectForm from "../../../components/admin/projects/ProjectForm";
 
 class NewProjectPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  handleSearchKey(e) {}
-
   render() {
     return (
       <div className="app-wrapper">
         <div className="row project-wrapper">
           <CardBox styleName="col-lg-12">
             <div className="row">
-              <div className="col-md-9"><h3 className="mt-0">New Project</h3></div>
+              <div className="col-md-9">
+                <h3 className="mt-0">New Project</h3>
+              </div>
               <div className="col-md-3 project-back-btn-wrapper">
                 <Link to="/app/admin/projects">
                   <Button
@@ -31,7 +27,7 @@ class NewProjectPage extends React.Component {
                 </Link>
               </div>
               <div className="col-md-12">
-                <ProjectForm mode="CREATE"/>
+                <ProjectForm mode="CREATE" />
               </div>
             </div>
           </CardBox>

@@ -5,6 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {userSignOut} from 'actions/Auth';
 import IntlMessages from 'util/IntlMessages';
+import {decodeAccessToken} from '../../security';
 
 class UserInfo extends React.Component {
 
@@ -30,7 +31,7 @@ class UserInfo extends React.Component {
           className="user-avatar "
         />
         <div className="user-detail">
-          <h4 className="user-name" onClick={this.handleClick}>Robert Johnson <i
+          <h4 className="user-name" onClick={this.handleClick}>{this.props.username} <i
             className="zmdi zmdi-caret-down zmdi-hc-fw align-middle"/>
           </h4>
         </div>
@@ -63,7 +64,8 @@ class UserInfo extends React.Component {
 
 const mapStateToProps = ({settings}) => {
   const {locale} = settings;
-  return {locale}
+  const username = decodeAccessToken().username;
+  return {locale,username}
 };
 export default connect(mapStateToProps, {userSignOut})(UserInfo);
 

@@ -4,13 +4,8 @@ import {
     ON_HIDE_LOADER,
     ON_SHOW_LOADER,
     SHOW_MESSAGE,
-    SIGNIN_FACEBOOK_USER_SUCCESS,
-    SIGNIN_GITHUB_USER_SUCCESS,
-    SIGNIN_GOOGLE_USER_SUCCESS,
-    SIGNIN_TWITTER_USER_SUCCESS,
     SIGNIN_USER_SUCCESS,
     SIGNOUT_USER_SUCCESS,
-    SIGNUP_USER_SUCCESS
 } from "constants/ActionTypes";
 
 const INIT_STATE = {
@@ -18,24 +13,17 @@ const INIT_STATE = {
     alertMessage: '',
     showMessage: false,
     initURL: '',
-    authUser: localStorage.getItem('user_id'),
+    accessToken: localStorage.getItem('accessToken')
 };
 
 
 export default (state = INIT_STATE, action) => {
     switch (action.type) {
-        case SIGNUP_USER_SUCCESS: {
-            return {
-                ...state,
-                loader: false,
-                authUser: action.payload
-            }
-        }
         case SIGNIN_USER_SUCCESS: {
             return {
                 ...state,
                 loader: false,
-                authUser: action.payload
+                accessToken: action.payload
             }
         }
         case INIT_URL: {
@@ -47,7 +35,7 @@ export default (state = INIT_STATE, action) => {
         case SIGNOUT_USER_SUCCESS: {
             return {
                 ...state,
-                authUser: null,
+                accessToken: null,
                 initURL: '',
                 loader: false
             }
@@ -67,35 +55,6 @@ export default (state = INIT_STATE, action) => {
                 alertMessage: '',
                 showMessage: false,
                 loader: false
-            }
-        }
-
-        case SIGNIN_GOOGLE_USER_SUCCESS: {
-            return {
-                ...state,
-                loader: false,
-                authUser: action.payload
-            }
-        }
-        case SIGNIN_FACEBOOK_USER_SUCCESS: {
-            return {
-                ...state,
-                loader: false,
-                authUser: action.payload
-            }
-        }
-        case SIGNIN_TWITTER_USER_SUCCESS: {
-            return {
-                ...state,
-                loader: false,
-                authUser: action.payload
-            }
-        }
-        case SIGNIN_GITHUB_USER_SUCCESS: {
-            return {
-                ...state,
-                loader: false,
-                authUser: action.payload
             }
         }
         case ON_SHOW_LOADER: {
