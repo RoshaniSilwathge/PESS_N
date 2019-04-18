@@ -10,6 +10,7 @@ const RFTextField = ({ input, label, meta: { touched, error } }) => {
       {...input}
       margin="normal"
       fullWidth
+      helperText={touched && (error && error.length !== 0) ? error : ''} 
     />
   );
 };

@@ -5,13 +5,18 @@ import {bindActionCreators} from 'redux';
 import Button from '@material-ui/core/Button';
 import ProjectItem from '../../../components/admin/projects/ProjectItem';
 import TextField from '@material-ui/core/TextField';
-import {searchKeyChanged, projectSelected} from '../../../../actions/admin/Projects';
+import {searchKeyChanged, projectSelected, loadProjects} from '../../../../actions/admin/Projects';
 import { withRouter } from 'react-router-dom';
+import Banner from '../../../components/Banner';
 
 class ProjectsPage extends React.Component {
 
   handleSearchKey(e){
     this.props.actions.searchKeyChanged(e.target.value);
+  }
+
+  componentDidMount(){
+    this.props.actions.loadProjects();
   }
 
   selectProject(projectId){
@@ -31,7 +36,7 @@ class ProjectsPage extends React.Component {
           <div className="col-md-3">
             <TextField
               id="project-search"
-              label="Search Project"
+              label="Search Project by Name"
               value={this.props.searchKey}
               onChange={(e) => this.handleSearchKey(e)}
               margin="normal"
@@ -40,6 +45,9 @@ class ProjectsPage extends React.Component {
           </div>
         </div>
         <div className="row project-wrapper">
+        {this.props.projects.length === 0 && (
+            <Banner msg="No Projects Found !!"/>
+          )}
         {
           this.props.projects.map(project => <ProjectItem key={`project-${project.id}`} project={project} selectProject={this.selectProject.bind(this)}/>)
         }
@@ -58,7 +66,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
       actions: bindActionCreators({
         searchKeyChanged,
-        projectSelected
+        projectSelected,
+        loadProjects
       }, dispatch)
   };
 };

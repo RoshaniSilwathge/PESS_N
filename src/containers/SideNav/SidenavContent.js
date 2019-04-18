@@ -112,18 +112,10 @@ class SidenavContent extends Component {
               </NavLink>
             </li>
             <li className="menu no-arrow">
-              <NavLink to="/app/admin/project-coordinators">
+              <NavLink to="/app/admin/staff-members">
                 <i className="zmdi zmdi-view-dashboard zmdi-hc-fw" />
                 <span className="nav-text">
                   <IntlMessages id="pages.admin.projectCoordinators" />{" "}
-                </span>
-              </NavLink>
-            </li>
-            <li className="menu no-arrow">
-              <NavLink to="/app/admin/assistant-project-coordinators">
-                <i className="zmdi zmdi-view-dashboard zmdi-hc-fw" />
-                <span className="nav-text">
-                  <IntlMessages id="pages.admin.assistantProjectCoordinators" />{" "}
                 </span>
               </NavLink>
             </li>

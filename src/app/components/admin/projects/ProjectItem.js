@@ -22,6 +22,10 @@ class ProjectItem extends React.Component {
       <div className="media media-list project-item-wrapper">
         <div className="media-body">
           <h3 className="mt-0">{this.props.project.name}</h3>
+          <h4 className="mt-0">Starts At : </h4>
+          <h4 className="mt-0">{this.props.project.startsAt.replace('T', ' / ')}</h4>
+          <h4 className="mt-0">Ends At : </h4>
+          <h4 className="mt-0">{this.props.project.endsAt.replace('T', ' / ')}</h4>
           <p className="card-text" />
           <div className="comment-footer project-item-actions">
             <Button

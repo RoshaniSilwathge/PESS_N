@@ -141,13 +141,40 @@ export const UPDATE_SEARCH = 'update_search';
 export const ADMIN_PROJECT_SEARCH_KEY_CHNAGED = 'admin_projects_search_key_changed';
 export const ADMIN_PROJECT_SELECTED = 'admin_project_selected';
 
-// ADMIN PCs
-export const ADMIN_PC_SEARCH_KEY_CHNAGED = 'admin_pcs_search_key_changed';
-
-// ADMIN APCs
-export const ADMIN_APC_SEARCH_KEY_CHNAGED = 'admin_apcs_search_key_changed';
-
+// ADMIN Staff Members
+export const ADMIN_STAFF_MEMBERS_SEARCH_KEY_CHNAGED = 'admin_staff_members_search_key_changed';
+export const ADMIN_LOAD_STAFF_MEMBERS = 'admin_load_staff_members';
+export const ADMIN_STAFF_MEMBERS_LOADED = 'admin_staff_members_loaded';
+export const ADMIN_STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED = 'admin_staff_members_search_user_role_changed';
+export const ADMIN_SAVE_STAFF_MEMBER = 'admin_save_staff_member';
+export const ADMIN_SAVE_STAFF_MEMBER_SUCCESS = 'admin_save_staff_member_success';
+export const ADMIN_LOAD_PROJECTS = 'admin_load_projects';
+export const ADMIN_PROJECTS_LOADED = 'admin_projects_loaded';
+export const ADMIN_SAVE_PROJECT = 'admin_save_project';
+export const ADMIN_SAVE_PROJECT_SUCCESS = 'admin_save_project_success';
+export const ADMIN_UPDATE_PROJECT = 'admin_update_project';
+export const ADMIN_UPDATE_PROJECT_SUCCESS = 'admin_update_project_success';
+export const ADMIN_STAFF_MEMBER_SELECTED = 'admin_staff_member_selected';
+export const ADMIN_UPDATE_STAFF_MEMBER = 'admin_update_staff_member';
+export const ADMIN_UPDATE_STAFF_MEMBER_SUCCESS = 'admin_update_staff_member_success';
 
 // ADMIN Students
 export const ADMIN_STUDENT_SEARCH_KEY_CHNAGED = 'admin_students_search_key_changed';
+export const ADMIN_STUDENT_PROJECT_SEARCH_KEY_CHNAGED = 'admin_students_project_search_key_changed';
+export const ADMIN_LOAD_STUDENTS = 'admin_load_students';
+export const ADMIN_STUDENTS_LOADED = 'admin_students_loaded';
+export const ADMIN_SAVE_STUDENT = 'admin_save_student';
+export const ADMIN_SAVE_STUDENT_SUCCESS = 'admin_save_student_success';
+export const ADMIN_UPDATE_STUDENT = 'admin_update_student';
+export const ADMIN_UPDATE_STUDENT_SUCCESS = 'admin_update_student_success';
+export const ADMIN_STUDENT_SELECTED = 'admin_student_selected';
+
+// Notifications
+export const SHOW_GLOBAL_SUCCESS_MSG = 'show_global_success_msg';
+export const HIDE_GLOBAL_SUCCESS_MSG = 'hide_global_success_msg';
+export const SHOW_GLOBAL_ERROR_MSG = 'show_global_error_msg';
+export const HIDE_GLOBAL_ERROR_MSG = 'hide_global_error_msg';
+
+// change password
+export const CHANGE_PASSWORD = 'change_password';
 

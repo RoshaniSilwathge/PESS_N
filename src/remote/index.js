@@ -9,7 +9,7 @@ axios.defaults.headers.delete['Content-Type'] = 'application/json';
 const instance = axios.create();
 
 instance.interceptors.request.use((config) => {
-    config.headers.Authorization = localStorage.getItem('accessToken');
+    config.headers.Authorization = `Bearer ${localStorage.getItem('accessToken')}`;
     return config;
 });
 

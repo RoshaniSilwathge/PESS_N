@@ -55,14 +55,18 @@ class App extends React.Component {
                          component={asyncComponent(() => import('./routes/admin/Projects'))}/>
 
                   <Route path={`${match.url}/admin/students/new`}
-                         component={asyncComponent(() => import('./routes/admin/Projects/NewProjectPage'))}/>
+                         component={asyncComponent(() => import('./routes/admin/Students/NewStudentPage'))}/>
+                  <Route path={`${match.url}/admin/students/:id/edit`}
+                         component={asyncComponent(() => import('./routes/admin/Students/EditStudentPage'))}/>
                   <Route path={`${match.url}/admin/students`}
                          component={asyncComponent(() => import('./routes/admin/Students'))}/>
 
-                  <Route path={`${match.url}/admin/project-coordinators`}
-                         component={asyncComponent(() => import('./routes/admin/PC'))}/>
-                  <Route path={`${match.url}/admin/assistant-project-coordinators`}
-                         component={asyncComponent(() => import('./routes/admin/APC'))}/>
+                  <Route path={`${match.url}/admin/staff-members/new`}
+                         component={asyncComponent(() => import('./routes/admin/StaffMembers/NewStaffMemberPage'))}/>
+                  <Route path={`${match.url}/admin/staff-members/:id/edit`}
+                         component={asyncComponent(() => import('./routes/admin/StaffMembers/EditStaffMemberPage'))}/>
+                  <Route path={`${match.url}/admin/staff-members`}
+                         component={asyncComponent(() => import('./routes/admin/StaffMembers'))}/>
                   <Route path={`${match.url}/admin/settings`}
                          component={asyncComponent(() => import('./routes/settings'))}/>
                   

@@ -15,6 +15,7 @@ import { setInitUrl } from "../actions/Auth";
 import RTL from "util/RTL";
 import asyncComponent from "util/asyncComponent";
 import { decodeAccessToken } from "../security";
+import Notifications from  '../app/components/Notifications';
 
 const RestrictedRoute = ({ component: Component, accessToken, ...rest }) => (
   <Route
@@ -103,6 +104,7 @@ class App extends Component {
                     )}
                   />
                 </Switch>
+                <Notifications/>
               </div>
             </RTL>
           </IntlProvider>

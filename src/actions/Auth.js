@@ -7,7 +7,8 @@ import {
     SIGNIN_USER,
     SIGNIN_USER_SUCCESS,
     SIGNOUT_USER,
-    SIGNOUT_USER_SUCCESS
+    SIGNOUT_USER_SUCCESS,
+    CHANGE_PASSWORD
 } from 'constants/ActionTypes';
 
 export const userSignIn = (user) => {
@@ -19,6 +20,13 @@ export const userSignIn = (user) => {
 export const userSignOut = () => {
     return {
         type: SIGNOUT_USER
+    };
+};
+
+export const changePassword = (payload) => {
+    return {
+        type: CHANGE_PASSWORD,
+        payload
     };
 };
 

@@ -8,7 +8,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-class PCItem extends React.Component {
+class StaffMemberItem extends React.Component {
   state = {
     open: false
   };
@@ -21,9 +21,20 @@ class PCItem extends React.Component {
     return (
       <div className="media media-list project-item-wrapper">
         <div className="media-body">
-          <h3 className="mt-0">{this.props.pc.name}</h3>
+          <h3 className="mt-0">{this.props.staffMember.name}</h3>
+          <h4 className="mt-0">{this.props.staffMember.email}</h4>
+          <h4 className="mt-0">{this.props.staffMember.telephone}</h4>
+          <h4 className="mt-0">{this.props.staffMember.userRole}</h4>
           <p className="card-text" />
           <div className="comment-footer project-item-actions">
+            <Button
+              size="small"
+              variant="contained"
+              className="jr-btn bg-purple text-white project-item-action-btn"
+              onClick={() => this.props.selectStaffMember(this.props.staffMember.id)}
+            >
+              <Build />
+            </Button>
             <Button
               size="small"
               variant="contained"
@@ -58,4 +69,4 @@ class PCItem extends React.Component {
   }
 }
 
-export default PCItem;
+export default StaffMemberItem;

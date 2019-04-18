@@ -1,17 +1,38 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import StudentItem from '../../../components/admin/students/StudentItem';
-import {searchKeyChanged} from '../../../../actions/admin/Student';
+import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import StudentItem from "../../../components/admin/students/StudentItem";
+import {
+  searchKeyChanged,
+  loadStudents,
+  projectSearchKeyChanged,
+  studentSelected
+} from "../../../../actions/admin/Student";
+import { loadProjects } from "../../../../actions/admin/Projects";
+import Banner from "../../../components/Banner";
+import { withRouter } from "react-router-dom";
 
 class StudentsPage extends React.Component {
-
-  handleSearchKey(e){
+  handleSearchKey(e) {
     this.props.actions.searchKeyChanged(e.target.value);
+  }
+
+  handleProjectSearchKey(e) {
+    this.props.actions.projectSearchKeyChanged(e.target.value);
+  }
+
+  componentDidMount() {
+    this.props.actions.loadStudents();
+    this.props.actions.loadProjects();
+  }
+
+  selectStudent(studentId) {
+    this.props.actions.studentSelected(studentId);
+    this.props.history.push(`/app/admin/students/${studentId}/edit`);
   }
 
   render() {
@@ -34,14 +55,14 @@ class StudentsPage extends React.Component {
               id="select-project"
               select
               label="Select Project"
-              value="default"
-              /*vonChange={this.handleChange('currency')}*/
+              value={this.props.searchKeyProject}
+              onChange={e => this.handleProjectSearchKey(e)}
               SelectProps={{}}
               margin="normal"
               fullWidth
             >
               <MenuItem key={-1} value="default">
-                  All Projects
+                All Projects
               </MenuItem>
               {this.props.projects.map(project => (
                 <MenuItem key={project.id} value={project.id}>
@@ -53,7 +74,7 @@ class StudentsPage extends React.Component {
           <div className="col-md-3">
             <TextField
               id="student-search"
-              label="Search Student"
+              label="Search Student by Index No"
               value={this.props.searchKey}
               onChange={e => this.handleSearchKey(e)}
               margin="normal"
@@ -62,28 +83,56 @@ class StudentsPage extends React.Component {
           </div>
         </div>
         <div className="row project-wrapper">
-        {
-          this.props.students.map(student => <StudentItem key={`student-${student.id}`} student={student}/>)
-        }
+          {this.props.students.length === 0 && (
+            <Banner msg="No Students Found !!" />
+          )}
+          {this.props.students.map(student => (
+            <StudentItem
+              key={`student-${student.id}`}
+              student={student}
+              selectStudent={this.selectStudent.bind(this)}
+            />
+          ))}
         </div>
-
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  const {searchKey, students} = state.students;
-  const {projects} = state.projects;
-  return {searchKey, projects,students: students.filter(student=>student.name.includes(searchKey))}
-};
-
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = state => {
+  const { searchKey, students, searchKeyProject } = state.students;
+  const { projects } = state.projects;
   return {
-      actions: bindActionCreators({
-        searchKeyChanged
-      }, dispatch)
+    searchKey,
+    projects,
+    searchKeyProject,
+    students: students.filter(student =>
+      searchKeyProject === "default"
+        ? student.indexNo.includes(searchKey)
+        : student.indexNo.includes(searchKey) &&
+          student.projectId === searchKeyProject
+    )
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(StudentsPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(
+      {
+        searchKeyChanged,
+        loadStudents,
+        loadProjects,
+        projectSearchKeyChanged,
+        studentSelected
+      },
+      dispatch
+    )
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(StudentsPage)
+);
