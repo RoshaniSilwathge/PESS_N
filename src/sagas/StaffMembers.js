@@ -7,15 +7,15 @@ import {
   sendPUTRequest
 } from "../remote";
 import {
-  ADMIN_LOAD_STAFF_MEMBERS,
-  ADMIN_SAVE_STAFF_MEMBER,
-  ADMIN_UPDATE_STAFF_MEMBER
+  LOAD_STAFF_MEMBERS,
+  SAVE_STAFF_MEMBER,
+  UPDATE_STAFF_MEMBER
 } from "constants/ActionTypes";
 import {
   staffMembersLoaded,
   saveStaffMemberSuccess,
   updateStaffMemberSuccess
-} from "actions/admin/StaffMembers";
+} from "actions/StaffMembers";
 import {
   showGlobalSuccessMsg,
   showGlobalErrorMsg
@@ -94,15 +94,15 @@ function* triggerUpdateStaffMember(data) {
 }
 
 export function* initiateStaffMembers() {
-  yield takeEvery(ADMIN_LOAD_STAFF_MEMBERS, triggerLoadStaffMembers);
+  yield takeEvery(LOAD_STAFF_MEMBERS, triggerLoadStaffMembers);
 }
 
 export function* initiateSaveStaffMember() {
-  yield takeEvery(ADMIN_SAVE_STAFF_MEMBER, triggerSaveStaffMember);
+  yield takeEvery(SAVE_STAFF_MEMBER, triggerSaveStaffMember);
 }
 
 export function* initiateUpdateStaffMember() {
-  yield takeEvery(ADMIN_UPDATE_STAFF_MEMBER, triggerUpdateStaffMember);
+  yield takeEvery(UPDATE_STAFF_MEMBER, triggerUpdateStaffMember);
 }
 
 export default function* rootSaga() {

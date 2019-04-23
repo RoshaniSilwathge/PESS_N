@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import Button from '@material-ui/core/Button';
 import ProjectItem from '../../../components/admin/projects/ProjectItem';
 import TextField from '@material-ui/core/TextField';
-import {searchKeyChanged, projectSelected, loadProjects} from '../../../../actions/admin/Projects';
+import {searchKeyChanged, projectSelected, loadProjects} from '../../../../actions/Projects';
 import { withRouter } from 'react-router-dom';
 import Banner from '../../../components/Banner';
 

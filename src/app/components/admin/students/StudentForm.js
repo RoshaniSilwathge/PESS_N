@@ -6,8 +6,8 @@ import {connect} from 'react-redux';
 import RFTextField from '../../fields/RFTextField';
 import RTSelectField from '../../fields/RTSelectField';
 import {required,selectRequired,email,telephone} from '../../../../util/Validations';
-import {loadProjects} from '../../../../actions/admin/Projects';
-import {saveStudent,updateStudent} from '../../../../actions/admin/Student';
+import {loadActiveProjects} from '../../../../actions/Projects';
+import {saveStudent,updateStudent} from '../../../../actions/Student';
 
 class StudentForm extends React.Component {
 
@@ -19,7 +19,7 @@ class StudentForm extends React.Component {
   }
 
   componentDidMount(){
-      this.props.actions.loadProjects();
+      this.props.actions.loadActiveProjects();
   }
 
   render() {
@@ -69,7 +69,7 @@ const studentForm = reduxForm({
 
 const mapStateToProps = (state) => {
   return {
-    projects: [{label:'Select a Project',value:'default'},...state.projects.projects.map(project=> {return {label:project.name, value: project.id}})],
+    projects: [{label:'Select a Project',value:'default'},...state.projects.activeProjects.map(project=> {return {label:project.name, value: project.id}})],
     studentId: state.students.selectedStudent ? state.students.selectedStudent.id : '',
     initialValues: {
         initials: state.students.selectedStudent ? state.students.selectedStudent.initials : '',
@@ -90,7 +90,7 @@ const mapDispatchToProps = (dispatch) => {
       actions: bindActionCreators({
         saveStudent,
         updateStudent,
-        loadProjects
+        loadActiveProjects
       }, dispatch)
   };
 };

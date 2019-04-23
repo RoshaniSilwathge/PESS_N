@@ -11,7 +11,7 @@ import {
   loadStaffMembers,
   searchUserRoleChanged,
   staffMemberSelected
-} from "../../../../actions/admin/StaffMembers";
+} from "../../../../actions/StaffMembers";
 import Banner from "../../../components/Banner";
 import { withRouter } from "react-router-dom";
 

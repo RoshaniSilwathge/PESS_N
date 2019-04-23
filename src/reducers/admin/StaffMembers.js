@@ -1,10 +1,10 @@
 import {
-  ADMIN_STAFF_MEMBERS_SEARCH_KEY_CHNAGED,
-  ADMIN_STAFF_MEMBERS_LOADED,
-  ADMIN_STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED,
-  ADMIN_SAVE_STAFF_MEMBER_SUCCESS,
-  ADMIN_STAFF_MEMBER_SELECTED,
-  ADMIN_UPDATE_STAFF_MEMBER_SUCCESS
+  STAFF_MEMBERS_SEARCH_KEY_CHNAGED,
+  STAFF_MEMBERS_LOADED,
+  STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED,
+  SAVE_STAFF_MEMBER_SUCCESS,
+  STAFF_MEMBER_SELECTED,
+  UPDATE_STAFF_MEMBER_SUCCESS
 } from "../../constants/ActionTypes";
 
 const INIT_STATE = {
@@ -16,13 +16,13 @@ const INIT_STATE = {
 
 export default (state = INIT_STATE, action) => {
   switch (action.type) {
-    case ADMIN_STAFF_MEMBERS_SEARCH_KEY_CHNAGED: {
+    case STAFF_MEMBERS_SEARCH_KEY_CHNAGED: {
       return {
         ...state,
         searchKey: action.payload
       };
     }
-    case ADMIN_STAFF_MEMBER_SELECTED: {
+    case STAFF_MEMBER_SELECTED: {
       return {
         ...state,
         selectedStaffMember: state.staffMembers.find(
@@ -30,25 +30,25 @@ export default (state = INIT_STATE, action) => {
         )
       };
     }
-    case ADMIN_STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED: {
+    case STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED: {
       return {
         ...state,
         searchUserRole: action.payload
       };
     }
-    case ADMIN_STAFF_MEMBERS_LOADED: {
+    case STAFF_MEMBERS_LOADED: {
       return {
         ...state,
         staffMembers: action.payload
       };
     }
-    case ADMIN_SAVE_STAFF_MEMBER_SUCCESS: {
+    case SAVE_STAFF_MEMBER_SUCCESS: {
       return {
         ...state,
         staffMembers: [action.payload,...state.staffMembers]
       };
     }
-    case ADMIN_UPDATE_STAFF_MEMBER_SUCCESS: {
+    case UPDATE_STAFF_MEMBER_SUCCESS: {
       const filteredStaffMembers = state.staffMembers.filter(staffMember=>staffMember.id !== action.payload.id);
       return {
         ...state,

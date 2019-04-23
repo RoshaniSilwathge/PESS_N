@@ -14,7 +14,7 @@ import {
 import {
   saveStaffMember,
   updateStaffMember
-} from "../../../../actions/admin/StaffMembers";
+} from "../../../../actions/StaffMembers";
 
 const USER_ROLES = [
   {

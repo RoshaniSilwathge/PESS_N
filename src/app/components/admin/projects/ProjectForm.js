@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import RFTextField from '../../fields/RFTextField';
 import RFDateTimeField from '../../fields/RFDateTimeField';
 import {required} from '../../../../util/Validations';
-import {saveProject,updateProject} from '../../../../actions/admin/Projects';
+import {saveProject,updateProject} from '../../../../actions/Projects';
 import moment from 'moment';
 
 class ProjectForm extends React.Component {

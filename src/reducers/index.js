@@ -6,6 +6,7 @@ import Notification from './Notification';
 import Projects from './admin/Projects';
 import StaffMembers from './admin/StaffMembers';
 import Student from './admin/Student';
+import Alerts from './admin/Alerts';
 import {reducer as form} from 'redux-form';
 
 
@@ -16,6 +17,7 @@ export default (history) => combineReducers({
   projects: Projects,
   staffMembers: StaffMembers,
   students: Student,
+  alerts:Alerts,
   notifications: Notification,
   form
 });

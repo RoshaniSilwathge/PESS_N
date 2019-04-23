@@ -22,3 +22,19 @@ a{
 .project-item-action-btn{
     margin-right: 10px !important;
 }
+
+.schedule-item{
+    margin: 40px auto 0px auto;
+}
+
+.schedule-input-item{
+    margin-top: 20px;
+    border: 1px dashed;
+    width: 100%;
+    margin-left: 0;
+    padding: 30px 10px;
+}
+
+.schedule-input-item .col-md-4{
+    float: left;
+}

@@ -70,10 +70,18 @@ class App extends React.Component {
                   <Route path={`${match.url}/admin/settings`}
                          component={asyncComponent(() => import('./routes/settings'))}/>
                   
+                  <Route path={`${match.url}/project-coordinator/projects/:id/schedule`}
+                         component={asyncComponent(() => import('./routes/pc/Projects/ScheduleProjectPage'))}/>
                   <Route path={`${match.url}/project-coordinator/projects`}
                          component={asyncComponent(() => import('./routes/pc/Projects'))}/>
+                  <Route path={`${match.url}/project-coordinator/students/:id/review`}
+                         component={asyncComponent(() => import('./routes/pc/ReviewStudents/StudentReviewPage'))}/>
                   <Route path={`${match.url}/project-coordinator/students`}
                          component={asyncComponent(() => import('./routes/pc/ReviewStudents'))}/>
+                  <Route path={`${match.url}/project-coordinator/announcements/:id/edit`}
+                         component={asyncComponent(() => import('./routes/pc/Announcements/EditAnnouncementPage'))}/>
+                  <Route path={`${match.url}/project-coordinator/announcements/new`}
+                         component={asyncComponent(() => import('./routes/pc/Announcements/NewAnnouncementPage'))}/>
                   <Route path={`${match.url}/project-coordinator/announcements`}
                          component={asyncComponent(() => import('./routes/pc/Announcements'))}/>
                   <Route path={`${match.url}/project-coordinator/settings`}

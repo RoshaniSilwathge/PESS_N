@@ -138,36 +138,39 @@ export const REMOVE_LABEL = 'remove_label';
 export const UPDATE_SEARCH = 'update_search';
 
 // ADMIN Projects
-export const ADMIN_PROJECT_SEARCH_KEY_CHNAGED = 'admin_projects_search_key_changed';
-export const ADMIN_PROJECT_SELECTED = 'admin_project_selected';
+export const PROJECT_SEARCH_KEY_CHNAGED = 'projects_search_key_changed';
+export const PROJECT_SELECTED = 'project_selected';
+export const ACTIVE_PROJECT_SELECTED = 'active_project_selected';
+export const LOAD_PROJECTS = 'load_projects';
+export const PROJECTS_LOADED = 'projects_loaded';
+export const SAVE_PROJECT = 'save_project';
+export const SAVE_PROJECT_SUCCESS = 'save_project_success';
+export const UPDATE_PROJECT = 'update_project';
+export const UPDATE_PROJECT_SUCCESS = 'update_project_success';
+export const LOAD_ACTIVE_PROJECTS = 'load_active_projects';
+export const ACTIVE_PROJECTS_LOADED = 'active_projects_loaded';
 
 // ADMIN Staff Members
-export const ADMIN_STAFF_MEMBERS_SEARCH_KEY_CHNAGED = 'admin_staff_members_search_key_changed';
-export const ADMIN_LOAD_STAFF_MEMBERS = 'admin_load_staff_members';
-export const ADMIN_STAFF_MEMBERS_LOADED = 'admin_staff_members_loaded';
-export const ADMIN_STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED = 'admin_staff_members_search_user_role_changed';
-export const ADMIN_SAVE_STAFF_MEMBER = 'admin_save_staff_member';
-export const ADMIN_SAVE_STAFF_MEMBER_SUCCESS = 'admin_save_staff_member_success';
-export const ADMIN_LOAD_PROJECTS = 'admin_load_projects';
-export const ADMIN_PROJECTS_LOADED = 'admin_projects_loaded';
-export const ADMIN_SAVE_PROJECT = 'admin_save_project';
-export const ADMIN_SAVE_PROJECT_SUCCESS = 'admin_save_project_success';
-export const ADMIN_UPDATE_PROJECT = 'admin_update_project';
-export const ADMIN_UPDATE_PROJECT_SUCCESS = 'admin_update_project_success';
-export const ADMIN_STAFF_MEMBER_SELECTED = 'admin_staff_member_selected';
-export const ADMIN_UPDATE_STAFF_MEMBER = 'admin_update_staff_member';
-export const ADMIN_UPDATE_STAFF_MEMBER_SUCCESS = 'admin_update_staff_member_success';
+export const STAFF_MEMBERS_SEARCH_KEY_CHNAGED = 'staff_members_search_key_changed';
+export const LOAD_STAFF_MEMBERS = 'load_staff_members';
+export const STAFF_MEMBERS_LOADED = 'staff_members_loaded';
+export const STAFF_MEMBERS_SEARCH_USER_ROLE_CHNAGED = 'staff_members_search_user_role_changed';
+export const SAVE_STAFF_MEMBER = 'save_staff_member';
+export const SAVE_STAFF_MEMBER_SUCCESS = 'save_staff_member_success';
+export const STAFF_MEMBER_SELECTED = 'staff_member_selected';
+export const UPDATE_STAFF_MEMBER = 'update_staff_member';
+export const UPDATE_STAFF_MEMBER_SUCCESS = 'update_staff_member_success';
 
 // ADMIN Students
-export const ADMIN_STUDENT_SEARCH_KEY_CHNAGED = 'admin_students_search_key_changed';
-export const ADMIN_STUDENT_PROJECT_SEARCH_KEY_CHNAGED = 'admin_students_project_search_key_changed';
-export const ADMIN_LOAD_STUDENTS = 'admin_load_students';
-export const ADMIN_STUDENTS_LOADED = 'admin_students_loaded';
-export const ADMIN_SAVE_STUDENT = 'admin_save_student';
-export const ADMIN_SAVE_STUDENT_SUCCESS = 'admin_save_student_success';
-export const ADMIN_UPDATE_STUDENT = 'admin_update_student';
-export const ADMIN_UPDATE_STUDENT_SUCCESS = 'admin_update_student_success';
-export const ADMIN_STUDENT_SELECTED = 'admin_student_selected';
+export const STUDENT_SEARCH_KEY_CHNAGED = 'students_search_key_changed';
+export const STUDENT_PROJECT_SEARCH_KEY_CHNAGED = 'students_project_search_key_changed';
+export const LOAD_STUDENTS = 'load_students';
+export const STUDENTS_LOADED = 'students_loaded';
+export const SAVE_STUDENT = 'save_student';
+export const SAVE_STUDENT_SUCCESS = 'save_student_success';
+export const UPDATE_STUDENT = 'update_student';
+export const UPDATE_STUDENT_SUCCESS = 'update_student_success';
+export const STUDENT_SELECTED = 'student_selected';
 
 // Notifications
 export const SHOW_GLOBAL_SUCCESS_MSG = 'show_global_success_msg';
@@ -178,3 +181,25 @@ export const HIDE_GLOBAL_ERROR_MSG = 'hide_global_error_msg';
 // change password
 export const CHANGE_PASSWORD = 'change_password';
 
+// PC Projects
+export const SAVE_PROJECT_SUBMISSIONS = 'save_project_submissions';
+export const SAVE_PROJECT_SUBMISSIONS_SUCCESS = 'save_project_submissions_success';
+export const UPDATE_PROJECT_SUBMISSIONS = 'update_project_submissions';
+export const UPDATE_PROJECT_SUBMISSIONS_SUCCESS = 'update_project_submissions_success';
+export const LOAD_PROJECT_SUBMISSIONS = 'load_project_submissions';
+export const PROJECT_SUBMISSIONS_LOADED = 'project_submissions_loaded';
+
+// PC Students
+export const LOAD_ACTIVE_STUDENTS = 'load_active_students';
+export const ACTIVE_STUDENTS_LOADED = 'active_students_loaded';
+
+// PC Announcements
+export const ALERTS_SEARCH_KEY_CHNAGED = 'alerts_search_key_changed';
+export const ALERTS_PROJECT_SEARCH_KEY_CHNAGED = 'alerts_project_search_key_changed';
+export const LOAD_ALERTS = 'load_alerts';
+export const ALERTS_LOADED = 'alerts_loaded';
+export const SAVE_ALERT = 'save_alert';
+export const SAVE_ALERT_SUCCESS = 'save_alert_success';
+export const UPDATE_ALERT = 'update_alert';
+export const UPDATE_ALERT_SUCCESS = 'update_alert_success';
+export const ALERT_SELECTED = 'alert_selected';

@@ -38,6 +38,7 @@ class ProjectItem extends React.Component {
               </Button>
             <Button
               size="small"
+              disabled
               variant="contained"
               className="jr-btn bg-deep-purple text-white"
               onClick={() => this.setState({ open: true })}

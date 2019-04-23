@@ -11,8 +11,8 @@ import {
   loadStudents,
   projectSearchKeyChanged,
   studentSelected
-} from "../../../../actions/admin/Student";
-import { loadProjects } from "../../../../actions/admin/Projects";
+} from "../../../../actions/Student";
+import { loadProjects } from "../../../../actions/Projects";
 import Banner from "../../../components/Banner";
 import { withRouter } from "react-router-dom";
 
